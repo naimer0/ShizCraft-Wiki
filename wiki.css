@@ -564,6 +564,13 @@ table.wiki-table {
 @media (max-width: 900px) {
   .wiki-mobile-header {
     display: flex;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  /* Hide header when sidebar is open */
+  .wiki-mobile-header.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%);
   }
   /* Hide floating button */
   body > .wiki-mobile-toggle {
@@ -588,6 +595,7 @@ table.wiki-table {
   .wiki-sidebar {
     z-index: 40 !important;
     background: #0f0f0f;
+    top: 0;
   }
   .wiki-breadcrumb {
     font-size: 0.78rem;

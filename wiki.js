@@ -294,23 +294,33 @@
     }
 
     // 2. Set up overlay toggling for mobile sidebar
+    function closeSidebar() {
+      const sb = document.querySelector('.wiki-sidebar');
+      const mh = document.querySelector('.wiki-mobile-header');
+      const ov = document.querySelector('.wiki-overlay');
+      if (sb) sb.classList.remove('open');
+      if (mh) mh.classList.remove('hidden');
+      if (ov) ov.remove();
+    }
+
     function toggleSidebar() {
       const sb = document.querySelector('.wiki-sidebar');
+      const mh = document.querySelector('.wiki-mobile-header');
       if (sb) {
         const isOpen = sb.classList.toggle('open');
-        let overlay = document.querySelector('.wiki-overlay');
         if (isOpen) {
+          // Hide mobile header
+          if (mh) mh.classList.add('hidden');
+          // Create overlay
+          let overlay = document.querySelector('.wiki-overlay');
           if (!overlay) {
             overlay = document.createElement('div');
             overlay.className = 'wiki-overlay';
             document.body.appendChild(overlay);
-            overlay.addEventListener('click', () => {
-              sb.classList.remove('open');
-              overlay.remove();
-            });
+            overlay.addEventListener('click', closeSidebar);
           }
         } else {
-          if (overlay) overlay.remove();
+          closeSidebar();
         }
       }
     }
@@ -344,10 +354,7 @@
         e.preventDefault();
         
         // Hide mobile sidebar and overlay if open
-        const sidebar = document.querySelector('.wiki-sidebar');
-        if (sidebar) sidebar.classList.remove('open');
-        const overlay = document.querySelector('.wiki-overlay');
-        if (overlay) overlay.remove();
+        closeSidebar();
         
         loadPage(href);
       }
