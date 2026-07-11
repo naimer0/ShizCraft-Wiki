@@ -2,6 +2,7 @@
 (function () {
   const pages = [
     { file: 'index.html', title: 'Введение', group: 'start' },
+    { file: 'rules.html', title: 'Правила', group: 'start' },
     { file: 'start.html', title: 'Как начать', group: 'start' },
     { file: 'commands.html', title: 'Команды', group: 'start' },
     { file: 'chat.html', title: 'Чат и ЛС', group: 'features' },
@@ -28,6 +29,7 @@
       <div class="wiki-nav-group">
         <div class="wiki-nav-title">Начало</div>
         <a href="index.html"><i class="fa-solid fa-house"></i> Введение</a>
+        <a href="rules.html"><i class="fa-solid fa-scale-balanced"></i> Правила</a>
         <a href="start.html"><i class="fa-solid fa-play"></i> Как начать</a>
         <a href="commands.html"><i class="fa-solid fa-terminal"></i> Команды</a>
       </div>

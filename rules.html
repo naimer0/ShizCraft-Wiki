@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Правила сервера — ShizCraft Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo_vanilla.png">
+  <link rel="stylesheet" href="wiki.css">
+  <style>
+    .rules-section { margin: 32px 0 24px; }
+    .rules-section h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      color: var(--w-accent);
+      border-bottom: 1px solid var(--w-line);
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+    }
+    .rules-section h2 .section-num {
+      background: var(--w-accent);
+      color: #0f0f0f;
+      font-size: 0.8rem;
+      font-weight: 800;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .rule-item {
+      margin: 0 0 14px;
+      padding: 0 0 0 16px;
+      border-left: 2px solid var(--w-line);
+      transition: border-color 0.2s ease;
+    }
+    .rule-item:hover { border-left-color: var(--w-accent); }
+    .rule-id {
+      font-family: var(--font-h);
+      font-weight: 700;
+      color: #aaa;
+      font-size: 0.82rem;
+      margin-bottom: 2px;
+    }
+    .rule-text {
+      color: #ccc;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .rule-punishment {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.8rem;
+      color: #f44;
+      font-style: italic;
+    }
+    .rules-header-date {
+      color: #666;
+      font-size: 0.85rem;
+      margin-top: -8px;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body class="wiki-body">
+  <button class="wiki-mobile-toggle" id="wiki-menu" type="button" aria-label="Меню"><i class="fa-solid fa-bars"></i></button>
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar"></aside>
+    <main class="wiki-main"><article class="wiki-article">
+
+      <h1>Правила сервера</h1>
+      <p class="rules-header-date">Актуальная редакция от 09 июля 2026 г.</p>
+
+      <!-- 1. Общие положения -->
+      <div class="rules-section">
+        <h2><span class="section-num">1</span> Общие положения</h2>
+
+        <div class="rule-item">
+          <div class="rule-id">1.1</div>
+          <div class="rule-text">Заходя на сервер, вы автоматически соглашаетесь с правилами и пользовательским соглашением проекта. Игра на сервере добровольна.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.2</div>
+          <div class="rule-text">Незнание правил не освобождает от ответственности. Вы обязаны знать актуальную версию правил.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.3</div>
+          <div class="rule-text">Администрация может наказывать за действия, не описанные в правилах, если они вредят серверу или игрокам, руководствуясь здравым смыслом и интересами проекта. Окончательное решение по любым спорным ситуациям остаётся за администрацией.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.4</div>
+          <div class="rule-text">Правила могут быть изменены в любой момент. Новая редакция вступает в силу с момента публикации — следите за обновлениями.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.5</div>
+          <div class="rule-text">Виды наказаний: предупреждение (варн), мут, кик, временный бан, перманентный бан. В пунктах правил указано минимальное наказание — итоговое определяется тяжестью нарушения. Четыре варна приводят к блокировке аккаунта. Администрация может дополнительно обязать нарушителя возместить ущерб потерпевшему.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.6</div>
+          <div class="rule-text">Наказание можно обжаловать в течение 3 дней с момента выдачи — через Telegram-сообщество @shizcraft или лично у администрации.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.7</div>
+          <div class="rule-text">Жалобы на нарушения подаются администрации через Telegram-бота @ShizCraft_bot. Прикладывайте доказательства — скриншоты или видео; жалобы без доказательств могут быть отклонены.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.8</div>
+          <div class="rule-text">Вы несёте полную ответственность за свой аккаунт. Потери из-за взлома, передачи аккаунта или собственной неосторожности не возмещаются.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.9</div>
+          <div class="rule-text">Сервер действует в рамках законодательства стран СНГ. Попытки нарушить закон пресекаются.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.10</div>
+          <div class="rule-text">Запрещены действия против проекта: дезинформация, призывы покинуть сервер, атаки на ресурсы проекта, попытки навредить администрации вне проекта.
+            <span class="rule-punishment">Наказание: бан от 30 дней.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.11</div>
+          <div class="rule-text">Запрещена реклама и упоминание сторонних серверов, проектов и услуг в любых чатах проекта.
+            <span class="rule-punishment">Наказание: бан от 7 дней.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">1.12</div>
+          <div class="rule-text">Администрация вправе ограничить доступ к серверу любому игроку без объяснения причин.</div>
+        </div>
+      </div>
+
+      <!-- 2. Игровой процесс -->
+      <div class="rules-section">
+        <h2><span class="section-num">2</span> Игровой процесс</h2>
+
+        <div class="rule-item">
+          <div class="rule-id">2.1</div>
+          <div class="rule-text">Гриф запрещён в любом виде, как и соучастие в нём. Грифом считается: убийство игроков и мобов на чужой территории; кража из чужих хранилищ (сундуки, шалкеры, печки, раздатчики, воронки, рамки и т.д.); поломка или изменение чужих построек.
+            <span class="rule-punishment">Наказание: варн / бан от 1 дня + возмещение ущерба.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.2</div>
+          <div class="rule-text">PvP — только по обоюдному согласию. Урон и убийство без согласия наказываются по жалобе.
+            <span class="rule-punishment">Наказание: кик / варн / бан от 30 минут.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.3</div>
+          <div class="rule-text">Запрещено забирать вещи убитого игрока — на любой территории.
+            <span class="rule-punishment">Наказание: варн / бан от 1 часа + возврат вещей.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.4</div>
+          <div class="rule-text">Масштабные раздачи ресурсов и конкурсы проводятся только по согласованию с администрацией.
+            <span class="rule-punishment">Наказание: варн / бан от 1 дня.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.5</div>
+          <div class="rule-text">Чужие фермы и механизмы можно использовать только с разрешения владельца.
+            <span class="rule-punishment">Наказание: варн.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.6</div>
+          <div class="rule-text">Запрещено чрезмерное использование снежков, яиц, эндер-жемчуга и зарядов ветра, взаимодействующих с блоками.
+            <span class="rule-punishment">Наказание: варн.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.7</div>
+          <div class="rule-text">Запрещено мешать игре других: спам зельями, снежками и стрелами, поджог игроков; вызов рейда на чужой территории; навязчивое «маячение» перед игроком и подставление под удары; спам звуками и голосом в PlasmoVoice; провокационное поведение.
+            <span class="rule-punishment">Наказание: варн.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.8</div>
+          <div class="rule-text">Дюп запрещён.
+            <span class="rule-punishment">Наказание: перманентный бан.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.9</div>
+          <div class="rule-text">Запрещены покупка и продажа внутриигровых ценностей за реальные деньги.
+            <span class="rule-punishment">Наказание: перманентный бан.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.10</div>
+          <div class="rule-text">Запрещены обман и мошенничество в сделках между игроками.
+            <span class="rule-punishment">Наказание: варн + возмещение ущерба потерпевшему.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.11</div>
+          <div class="rule-text">Запрещены читы и любое ПО, дающее игровое преимущество: X-Ray, Wallhack, авто-aim, скрипты, боты, Baritone и т.п., а также частичная или полная автоматизация игрового процесса.
+            <span class="rule-punishment">Наказание: перманентный бан.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.12</div>
+          <div class="rule-text">Разрешённые модификации: оптимизация и графика (Sodium, OptiFine, шейдеры); изменение гаммы (ночное зрение); миникарты; простой автокликер; автосортировка инвентаря и сундуков (отключать на PvP-турнирах); Litematica, включая функцию Print; Replay-мод (с разрешения администрации). Не уверены, разрешён ли мод, — уточните у администрации до использования.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.13</div>
+          <div class="rule-text">Команду /fly запрещено использовать в Нижнем мире и Энде.
+            <span class="rule-punishment">Наказание: варн / снятие привилегии.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.14</div>
+          <div class="rule-text">Запрещено использовать и скрывать баги сервера, а также эксплуатировать дыры в правилах ради выгоды. О найденных багах сообщайте администрации.
+            <span class="rule-punishment">Наказание: бан от 3 дней.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.15</div>
+          <div class="rule-text">Запрещено распространять сид мира.
+            <span class="rule-punishment">Наказание: перманентный бан.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.16</div>
+          <div class="rule-text">Запрещены постройки нецензурного и оскорбительного характера: запрещённая символика, свастики, нецензурные изображения и т.п.
+            <span class="rule-punishment">Наказание: варн / бан от 1 дня + снос постройки.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.17</div>
+          <div class="rule-text">Запрещено копировать чужие арты без согласия автора. Наказывается по жалобе.
+            <span class="rule-punishment">Наказание: варн + удаление арта.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.18</div>
+          <div class="rule-text">Запрещено создавать чрезмерную нагрузку на сервер: лаг-машины, огромные скопления мобов, стоек брони и вагонеток, перегружающие фермы (например, фермы визеров).
+            <span class="rule-punishment">Наказание: варн / бан + снос. Намеренная вредоносная нагрузка (лаг-машины, DDoS) — перманентный бан.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">2.19</div>
+          <div class="rule-text">Запрещено намеренное "Выталкивание" игрока из его места пребывания.
+            <span class="rule-punishment">Наказание: варн / бан от 1 дня.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Территории и постройки -->
+      <div class="rules-section">
+        <h2><span class="section-num">3</span> Территории и постройки</h2>
+
+        <div class="rule-item">
+          <div class="rule-id">3.1</div>
+          <div class="rule-text">Чтобы пометить территорию, поставьте табличку со своим ником возле постройки. Ваша территория — это постройка и область вокруг неё.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">3.2</div>
+          <div class="rule-text">Для крупных территорий (города, большие фермы) обозначьте границы пунктиром из блоков с шагом 3–5 блоков и поставьте таблички с ником по углам. Пунктир должен быть заметен на фоне местности. Администрация может запросить план застройки, если территория выглядит неоправданно большой.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">3.3</div>
+          <div class="rule-text">Запрещено строиться в пределах видимости чужой территории без согласия владельца.
+            <span class="rule-punishment">Наказание: предупреждение + перенос или снос постройки.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">3.4</div>
+          <div class="rule-text">Общественные территории нельзя занимать и застраивать: радиус 500 блоков от спавна в обычном мире; радиус 250 блоков в Незере; радиус 500 блоков в Энде, включая главный остров. Ближайшие к спавну порталы в Энд (в радиусе 1800 блоков) также считаются общественными.
+            <span class="rule-punishment">Наказание: предупреждение + снос постройки.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">3.5</div>
+          <div class="rule-text">Если владелец территории неактивен более 30 дней, территорию можно занять. При этом вы обязаны сохранить все ресурсы прежнего владельца, сложив их в отдельный сундук.
+            <span class="rule-punishment">Наказание за утерю чужих вещей: варн + компенсация.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">3.6</div>
+          <div class="rule-text">Запрещено находиться на чужой территории против воли владельца. Если вас попросили уйти — уходите сразу. Однократное открытие двери, калитки или люка без захода на территорию нарушением не считается.
+            <span class="rule-punishment">Наказание: кик / варн / бан от 30 минут.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">3.7</div>
+          <div class="rule-text">Запрещён вандализм на нетронутых территориях: бессмысленные столбы; обрубленные верхушки деревьев; незакрытые дыры; спам блоками, табличками и стойками брони; поломка спавнеров и убийство жителей в местах, которые вы не собираетесь развивать.
+            <span class="rule-punishment">Наказание: варн + устранение последствий.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">3.8</div>
+          <div class="rule-text">Территориальные споры решает администрация.</div>
+        </div>
+      </div>
+
+      <!-- 4. Чат и общение -->
+      <div class="rules-section">
+        <h2><span class="section-num">4</span> Чат и общение</h2>
+
+        <div class="rule-item">
+          <div class="rule-id">4.1</div>
+          <div class="rule-text">Правила распространяются на все каналы общения проекта: игровой чат, голосовой чат (PlasmoVoice), Discord, Telegram и другие, а также на любой текст внутри игры — таблички, книги, названия предметов и питомцев. Соблюдайте также правила самих платформ.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">4.2</div>
+          <div class="rule-text">Общайтесь уважительно. Юмор приветствуется, если он понятен всем участникам и никого не задевает.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">4.3</div>
+          <div class="rule-text">Запрещены оскорбления (в том числе родственников), травля, унижение чести и достоинства, провокации конфликтов и любая дискриминация: расизм, национализм, сексизм, гомофобия, религиозная вражда, пропаганда фашизма и экстремизма.
+            <span class="rule-punishment">Наказание: мут от 15 минут.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">4.4</div>
+          <div class="rule-text">Запрещены спам (3 и более одинаковых сообщений), флуд (бессодержательные объёмные сообщения, злоупотребление символами и стикерами) и КАПС.
+            <span class="rule-punishment">Наказание: мут от 30 минут.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">4.5</div>
+          <div class="rule-text">Запрещена чрезмерная ненормативная лексика вне локального чата.
+            <span class="rule-punishment">Наказание: мут от 30 минут.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">4.6</div>
+          <div class="rule-text">Запрещено обсуждение читов.
+            <span class="rule-punishment">Наказание: мут от 30 минут.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">4.7</div>
+          <div class="rule-text">Запрещены обсуждение политики и использование символики (флаги, буквы, смайлики), связанной с военными конфликтами.
+            <span class="rule-punishment">Наказание: мут от 30 минут.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">4.8</div>
+          <div class="rule-text">Запрещено злоупотребление голосовым чатом: громкие звуки и писки, неадекватный контент, чрезмерное использование войс-мода.
+            <span class="rule-punishment">Наказание: мут от 30 минут.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">4.9</div>
+          <div class="rule-text">Запрещено раскрывать лор и будущие события сервера.
+            <span class="rule-punishment">Наказание: мут от 1 дня.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Аккаунты -->
+      <div class="rules-section">
+        <h2><span class="section-num">5</span> Аккаунты</h2>
+
+        <div class="rule-item">
+          <div class="rule-id">5.1</div>
+          <div class="rule-text">Разрешено иметь несколько аккаунтов (твинков).</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">5.2</div>
+          <div class="rule-text">Запрещён обход наказаний через твинки.
+            <span class="rule-punishment">Наказание: перманентный бан твинков и продление наказания основному аккаунту.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">5.3</div>
+          <div class="rule-text">Запрещены передача, продажа и покупка аккаунтов.
+            <span class="rule-punishment">Наказание: перманентный бан.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">5.4</div>
+          <div class="rule-text">Запрещены попытки взлома чужих аккаунтов.
+            <span class="rule-punishment">Наказание: перманентный бан.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">5.5</div>
+          <div class="rule-text">Запрещено выдавать себя за другого игрока, администрацию или медиа-партнёров проекта.
+            <span class="rule-punishment">Наказание: бан от 15 дней.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">5.6</div>
+          <div class="rule-text">Запрещены никнеймы, скины, плащи и аватарки с нецензурной лексикой, политическим и 18+ содержанием, дискриминацией и прочим неприемлемым контентом.
+            <span class="rule-punishment">Наказание: бан до смены ника или скина.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">5.7</div>
+          <div class="rule-text">Запрещено использовать скины других игроков без их разрешения.
+            <span class="rule-punishment">Наказание: предупреждение.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">5.8</div>
+          <div class="rule-text">Запрещено публиковать личные данные и переписку игроков без их согласия.</div>
+        </div>
+      </div>
+
+      <!-- 6. Администрация -->
+      <div class="rules-section">
+        <h2><span class="section-num">6</span> Администрация</h2>
+
+        <div class="rule-item">
+          <div class="rule-id">6.1</div>
+          <div class="rule-text">Администрация обязана общаться с игроками уважительно и конструктивно, без личной неприязни.
+            <span class="rule-punishment">Наказание для администрации: ограничение или снятие полномочий.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">6.2</div>
+          <div class="rule-text">Администрация не возмещает потери, произошедшие по вине игрока (читы, взлом, невнимательность, лаги и т.п.), и никогда не запрашивает пароли от аккаунтов.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">6.3</div>
+          <div class="rule-text">Администрация вправе отказать игроку в услуге или одолжении.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">6.4</div>
+          <div class="rule-text">Запрещены оскорбления, обман, клевета, шантаж, угрозы, попытки дискредитации или подкупа администрации.
+            <span class="rule-punishment">Наказание: бан от 3 дней.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">6.5</div>
+          <div class="rule-text">Запрещено мешать работе администрации, скрывать информацию и давать ложные показания при разбирательствах.
+            <span class="rule-punishment">Наказание: бан от 3 дней.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">6.6</div>
+          <div class="rule-text">При подозрении в использовании читов или торговле за реальные деньги администрация может потребовать проверку компьютера. Запрещены модификации, мешающие проверке.
+            <span class="rule-punishment">Наказание за отказ от проверки: перманентный бан.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">6.7</div>
+          <div class="rule-text">Запрещена публикация личной переписки и конфиденциальной информации о проекте, игроках или администрации.
+            <span class="rule-punishment">Наказание: перманентный бан.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">6.9</div>
+          <div class="rule-text">Для выдачи наказаний администрация может использовать материалы (скриншоты, видео) с игровых серверов, Discord, Telegram, YouTube, Twitch и других платформ.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">6.10</div>
+          <div class="rule-text">Администрации запрещено пользоваться служебными преимуществами: откатывать инвентарь без существенной причины, дюпать ресурсы, телепортироваться ради выгоды, раскрывать местоположение игроков, выдавать повышенные права.
+            <span class="rule-punishment">Наказание: снятие полномочий.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Донат-услуги -->
+      <div class="rules-section">
+        <h2><span class="section-num">7</span> Донат-услуги</h2>
+
+        <div class="rule-item">
+          <div class="rule-id">7.1</div>
+          <div class="rule-text">Все платежи — добровольные пожертвования на развитие проекта. Возврат средств не предусмотрен.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">7.2</div>
+          <div class="rule-text">Администрация может аннулировать покупку и отозвать привилегии без объяснения причин и компенсации.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">7.3</div>
+          <div class="rule-text">Запрещено использовать донат-привилегии во вред игрокам, серверу или игровому процессу.
+            <span class="rule-punishment">Наказание: снятие привилегий.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-id">7.4</div>
+          <div class="rule-text">Приобретайте привилегии только через официальный сайт и указанные на нём контакты. За покупки из неофициальных источников администрация ответственности не несёт.</div>
+        </div>
+      </div>
+
+    </article></main>
+  </div>
+  <script src="wiki.js"></script>
+</body>
+</html>
