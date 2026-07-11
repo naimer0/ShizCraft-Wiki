@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Репорты — ShizCraft Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo_vanilla.png">
+  <link rel="stylesheet" href="wiki.css">
+</head>
+<body class="wiki-body">
+  <button class="wiki-mobile-toggle" id="wiki-menu" type="button"><i class="fa-solid fa-bars"></i></button>
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar"></aside>
+    <main class="wiki-main"><article class="wiki-article">
+      <h1>Система репортов (жалоб)</h1>
+      <p class="wiki-lead">Как сообщить администрации о нарушении правил или гриферстве прямо во время игры.</p>
+
+      <p>Если вы обнаружили нарушение правил сервера, не замалчивайте его. Вы можете отправить подробную жалобу с помощью встроенной системы:</p>
+      
+      <ol>
+        <li>Введите команду в чат: <code>/report &lt;ник_нарушителя&gt;</code>.</li>
+        <li>
+          <strong>Привязка контактов:</strong> Сервер попросит вас ввести в чат ваш контактный Telegram в формате <code>@имя_пользователя</code> (например, <code>@naimer0</code>).
+          <div class="wiki-callout warning">
+            <strong>Формат ввода:</strong> Имя пользователя Telegram обязательно должно начинаться со специального знака <code>@</code>. В противном случае сервер выдаст сообщение об ошибке. Это необходимо, чтобы администратор мог связаться с вами для уточнения деталей.
+          </div>
+        </li>
+        <li>
+          <strong>Выбор причины:</strong> На экране откроется меню выбора причины жалобы:
+          <ul>
+            <li><strong>Читы:</strong> Используйте при подозрении в использовании стороннего ПО (Killaura, X-Ray, Fly, AutoClicker и т.д.).</li>
+            <li><strong>Гриф:</strong> Выбирайте при разрушении ваших построек, заливе лавой, убийстве домашнего скота или краже вещей из сундуков.</li>
+            <li><strong>Другое:</strong> Для любых других нарушений (оскорбления в чате, реклама, помеха игре, багоюз).</li>
+          </ul>
+        </li>
+      </ol>
+
+      <div class="wiki-callout success">
+        После выбора причины жалоба будет успешно сформирована, а на экране появится сообщение об успешном создании жалобы.
+      </div>
+
+      <h2>Что происходит дальше?</h2>
+      <p>Как только вы создаете жалобу, происходит следующее:</p>
+      <ul>
+        <li>Администраторы получают оповещение о вашей жалобе.</li>
+        <li>Ваша жалоба ставится в специальную очередь проверки.</li>
+        <li>Администрация рассмотрит жалобу и примет меры.</li>
+      </ul>
+
+      <h2>Отслеживание статуса — команда <code>/myreports</code></h2>
+      <p>Вы можете в любой момент посмотреть ход рассмотрения ваших обращений с помощью команды <code>/myreports</code>. В открывшемся меню отображаются:</p>
+      <ul>
+        <li><strong>Активные жалобы:</strong> Жалобы, находящиеся на рассмотрении модераторами.</li>
+        <li><strong>Закрытые жалобы:</strong> Жалобы, по которым уже вынесен вердикт. В меню вы увидите статус решения и никнейм администратора, закрывшего жалобу.</li>
+      </ul>
+    </article></main>
+  </div>
+  <script src="wiki.js"></script>
+</body>
+</html>

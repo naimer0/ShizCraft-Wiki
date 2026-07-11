@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Команды — ShizCraft Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo_vanilla.png">
+  <link rel="stylesheet" href="wiki.css">
+</head>
+<body class="wiki-body">
+  <button class="wiki-mobile-toggle" id="wiki-menu" type="button"><i class="fa-solid fa-bars"></i></button>
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar"></aside>
+    <main class="wiki-main"><article class="wiki-article">
+      <h1>Все команды</h1>
+      <p class="wiki-lead">Сводка команд для игроков. Косметические команды и команды повышенного удобства доступны в меню доната.</p>
+
+      <h2>Основные команды игрока</h2>
+      <p>Ниже представлены команды, доступные всем игрокам сервера по умолчанию для управления игровым процессом и получения информации:</p>
+
+      <div class="wiki-table-wrap"><table class="wiki-table">
+        <tr><th>Команда</th><th>Пример использования</th><th>Описание</th></tr>
+        <tr>
+          <td><code>/help</code></td>
+          <td><code>/help [страница]</code></td>
+          <td>Просмотр многостраничной справки сервера ShizCraft в чате. Всего доступно 6 страниц справки.</td>
+        </tr>
+        <tr>
+          <td><code>/rules</code></td>
+          <td><code>/rules</code></td>
+          <td>Открыть интерактивное меню с правилами сервера (обязательно для ознакомления).</td>
+        </tr>
+        <tr>
+          <td><code>/trusted</code></td>
+          <td><code>/trusted</code></td>
+          <td>Проверить ваш текущий наигранный онлайн и прогресс до получения статуса «Доверенный» (требуется 6 часов).</td>
+        </tr>
+        <tr>
+          <td><code>/playtime</code></td>
+          <td><code>/playtime [игрок]</code></td>
+          <td>Показывает наигранное время (в часах), дату первой регистрации и последнего входа для себя или другого игрока.</td>
+        </tr>
+        <tr>
+          <td><code>/playtimetop</code></td>
+          <td><code>/playtimetop</code></td>
+          <td>Показать топ-10 игроков сервера по количеству наигранного времени.</td>
+        </tr>
+        <tr>
+          <td><code>/settings</code></td>
+          <td><code>/settings</code></td>
+          <td>Открыть меню настроек профиля (изменение роста, переключение уведомлений, жестов и т.д.).</td>
+        </tr>
+        <tr>
+          <td><code>/afk</code></td>
+          <td><code>/afk [текст]</code></td>
+          <td>Вручную уйти в режим AFK с установкой кастомного статуса.</td>
+        </tr>
+        <tr>
+          <td><code>/report</code></td>
+          <td><code>/report &lt;ник&gt;</code></td>
+          <td>Отправить жалобу на игрока. Потребуется указать причину и ваш Telegram для обратной связи.</td>
+        </tr>
+        <tr>
+          <td><code>/myreports</code></td>
+          <td><code>/myreports</code></td>
+          <td>Проверить статус ваших жалоб.</td>
+        </tr>
+      </table></div>
+
+      <h2>Жесты и социальные взаимодействия</h2>
+      <p>Команды для выражения эмоций и социализации в игровом мире:</p>
+      
+      <div class="wiki-table-wrap"><table class="wiki-table">
+        <tr><th>Команда</th><th>Пример использования</th><th>Описание</th></tr>
+        <tr>
+          <td><code>/kiss</code></td>
+          <td><code>/kiss &lt;игрок&gt;</code></td>
+          <td>Поцеловать игрока. У цели должны быть включены поцелуи. Действие также доступно при нажатии <code>Shift+F</code> рядом с игроком.</td>
+        </tr>
+        <tr>
+          <td><code>/togglekiss</code></td>
+          <td><code>/togglekiss</code></td>
+          <td>Быстрое переключение возможности целовать вас другими игроками.</td>
+        </tr>
+        <tr>
+          <td><code>/me</code></td>
+          <td><code>/me моет руки</code></td>
+          <td>RP-команда для описания действий вашего персонажа от третьего лица.</td>
+        </tr>
+        <tr>
+          <td><code>/do</code></td>
+          <td><code>/do На столе лежит книга.</code></td>
+          <td>RP-команда для описания событий или окружения вокруг персонажа.</td>
+        </tr>
+      </table></div>
+
+      <h2>Префиксы и типы чатов</h2>
+      <p>На сервере действует разделение чата по дальности и ролям:</p>
+      <div class="wiki-table-wrap"><table class="wiki-table">
+        <tr><th>Префикс</th><th>Канал связи</th><th>Радиус слышимости</th><th>Пример</th></tr>
+        <tr>
+          <td>(без префикса)</td>
+          <td><strong>Локальный чат</strong></td>
+          <td>До 100 блоков вокруг игрока</td>
+          <td><code>Привет всем!</code></td>
+        </tr>
+        <tr>
+          <td><code>!</code> (воскл. знак)</td>
+          <td><strong>Глобальный чат</strong></td>
+          <td>Весь сервер (все миры)</td>
+          <td><code>!Кто пойдет в шахту?</code></td>
+        </tr>
+        <tr>
+          <td><code>@ник_игрока</code></td>
+          <td><strong>Упоминание</strong></td>
+          <td>Никнейм игрока подсветится в чате, и он получит звуковой сигнал</td>
+          <td><code>@naimer0 загляни в сундук</code></td>
+        </tr>
+      </table></div>
+
+      <div class="wiki-callout info">
+        <strong>Обратите внимание:</strong> Для быстрого перехода в меню личных сообщений (ЛС) используйте команду <code>/pm &lt;ник&gt; &lt;сообщение&gt;</code> или её сокращения <code>/msg</code>, <code>/tell</code>, <code>/m</code>, <code>/w</code>.
+      </div>
+    </article></main>
+  </div>
+  <script src="wiki.js"></script>
+</body>
+</html>

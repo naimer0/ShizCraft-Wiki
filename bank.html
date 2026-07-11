@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Банк — ShizCraft Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo_vanilla.png">
+  <link rel="stylesheet" href="wiki.css">
+</head>
+<body class="wiki-body">
+  <button class="wiki-mobile-toggle" id="wiki-menu" type="button"><i class="fa-solid fa-bars"></i></button>
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar"></aside>
+    <main class="wiki-main"><article class="wiki-article">
+      <h1>Банковская система и валюта АР</h1>
+      <p class="wiki-lead">Все о финансовых операциях на ShizCraft: открытие счетов, денежные переводы, вызов банкиров и правила оплаты штрафов.</p>
+
+      <p>Основной денежной единицей режима "Vanilla" является Алмазная руда (АР). Все расчеты, торговля и оплата услуг осуществляются через счета в этой валюте.</p>
+
+      <h2>Банковское меню — команда <code>/bank</code></h2>
+      <p>С помощью команды <code>/bank</code> вы можете в любой момент открыть удобное графическое меню управления вашими финансами. В нем доступны 4 основных раздела:</p>
+      
+      <div class="wiki-grid">
+        <div class="wiki-card">
+          <div class="icon" style="background: rgba(254,179,0,.15); color: #fe9a00;"><i class="fa-solid fa-bell"></i></div>
+          <h3>Вызов банкира</h3>
+          <p>Посылает звуковое и текстовое уведомление сотрудникам банка. Доступно только в пределах официального здания банка.</p>
+        </div>
+        <div class="wiki-card">
+          <div class="icon" style="background: rgba(30,215,96,.12); color: var(--w-accent);"><i class="fa-solid fa-book"></i></div>
+          <h3>История операций</h3>
+          <p>Полный журнал ваших транзакций. Показывает даты, получателей/отправителей и суммы перечислений.</p>
+        </div>
+        <div class="wiki-card">
+          <div class="icon" style="background: rgba(30,215,96,.12); color: var(--w-accent);"><i class="fa-solid fa-vault"></i></div>
+          <h3>Мои счета</h3>
+          <p>Раздел для управления вашими личными счетами, балансом и переименованием реквизитов.</p>
+        </div>
+        <div class="wiki-card">
+          <div class="icon" style="background: rgba(251,44,54,.15); color: #fb2c36;"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3>Мои штрафы</h3>
+          <p>Список выписанных вам задолженностей за нарушение правил сервера с таймером оплаты.</p>
+        </div>
+      </div>
+
+      <h2>Управление банковскими счетами</h2>
+      <p>Каждый игрок может владеть максимум <strong>3 счетами</strong> одновременно. Первоначальный счет открывается при первой регистрации, дополнительные счета можно запросить у банкиров.</p>
+      
+      <h3>Доступные операции в меню счета:</h3>
+      <ul>
+        <li><strong>Перевод по никнейму:</strong> Быстрая отправка средств игроку. Введите ник в чат после нажатия на кнопку.</li>
+        <li><strong>Перевод по номеру счета:</strong> Отправка средств на конкретный счет (например, <code>#14</code>).</li>
+        <li><strong>Переименование счета:</strong> Установите уникальное имя для своего счета (например, «Бюджет города» или «Склад»), чтобы не путаться.</li>
+        <li><strong>Закрытие счета:</strong> Аннулирует счет. <span style="color:#ff8b94">Внимание: все АР на закрываемом счете сгорают навсегда!</span></li>
+      </ul>
+
+      <div class="wiki-callout info">
+        <strong>Как осуществляются переводы:</strong> После выбора типа перевода в меню, система временно закроет инвентарь и попросит вас ввести параметры (ник получателя, номер счета или сумму) прямо в чат. Для отмены операции на любом этапе просто введите символ <code>!</code> (восклицательный знак).
+      </div>
+
+      <h2>Система штрафов</h2>
+      <p>Сотрудники банка (банкиры) уполномочены выписывать штрафы игрокам за нарушение внутренних правил сервера.</p>
+      
+      <h3>Правила оплаты штрафов:</h3>
+      <ul>
+        <li>Выписанный штраф отображается в разделе <code>/bank</code> -> <strong>«Мои штрафы»</strong> с указанием суммы, причины и имени выдавшего банкира.</li>
+        <li>Оплатить штраф можно прямо через меню, выбрав один из ваших счетов с достаточным балансом АР.</li>
+        <li>Срок, отведенный на оплату штрафа, составляет **3 дня** с момента выдачи.</li>
+      </ul>
+
+      <div class="wiki-callout danger">
+        <strong>Критически важно:</strong> Просрочка оплаты штрафа ведет к автоматической блокировке игрового аккаунта на **10 дней**. Оплачивайте задолженности вовремя!
+      </div>
+    </article></main>
+  </div>
+  <script src="wiki.js"></script>
+</body>
+</html>

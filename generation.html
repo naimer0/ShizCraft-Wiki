@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кастомная генерация — ShizCraft Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo_vanilla.png">
+  <link rel="stylesheet" href="wiki.css">
+  <style>
+    .gen-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 30px 0;
+    }
+    .gen-img-wrapper {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--w-line);
+      background: #181818;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gen-img-wrapper:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(139, 116, 255, 0.15);
+    }
+    .gen-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .gen-img-wrapper:hover img {
+      transform: scale(1.03);
+    }
+    @media (max-width: 600px) {
+      .gen-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="wiki-body">
+  <button class="wiki-mobile-toggle" id="wiki-menu" type="button" aria-label="Меню"><i class="fa-solid fa-bars"></i></button>
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar"></aside>
+    <main class="wiki-main"><article class="wiki-article">
+      <div class="wiki-breadcrumb">
+        <a href="index.html">Вики</a>
+        <span>/</span>
+        <span>Особенности</span>
+        <span>/</span>
+        <span>Кастомная генерация</span>
+      </div>
+      <h1>Кастомная генерация</h1>
+      <p>Кастомная генерация на сервере изменяет форму и внешний вид ландшафта, делая его более разнообразным, живописным и вдохновляющим для строительства. При этом все типы блоков, руды и структуры остаются стандартными, гарантируя полную стабильность и сохраняя привычные механики выживания.</p>
+
+      <div class="wiki-callout info">
+        <strong>Что изменилось:</strong> Вы увидите величественные горные вершины, плавные переходы между биомами, реалистичные высокие кроны деревьев, проработанные берега рек и извилистые каньоны.
+      </div>
+
+      <h2>Галерея пейзажей</h2>
+      <p>Несколько снимков, демонстрирующих красоту обновленного мира на сервере:</p>
+
+      <div class="gen-gallery">
+        <div class="gen-img-wrapper">
+          <img src="https://necovanilla.gitbook.io/nekovanila-viki/~gitbook/image?url=https%3A%2F%2F3737590677-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FDDUNvH2sIWXShQPw1sNJ%252Fuploads%252FzsAsYV38wQoyWcvzjWhF%252Fimage.png%3Falt%3Dmedia%26token%3Dcb076814-61fc-40cc-8ac1-668332a34b68&width=768&dpr=1&quality=100&sign=b0ce0954&sv=2" alt="Кастомная генерация - Пейзаж 1">
+        </div>
+        <div class="gen-img-wrapper">
+          <img src="https://necovanilla.gitbook.io/nekovanila-viki/~gitbook/image?url=https%3A%2F%2F3737590677-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FDDUNvH2sIWXShQPw1sNJ%252Fuploads%252FKhhr3DyU88kCMY70Yy8q%252Fimage.png%3Falt%3Dmedia%26token%3D8f3a95a3-3580-47b7-a724-7192478b79b2&width=768&dpr=1&quality=100&sign=ae8de544&sv=2" alt="Кастомная генерация - Пейзаж 2">
+        </div>
+        <div class="gen-img-wrapper">
+          <img src="https://necovanilla.gitbook.io/nekovanila-viki/~gitbook/image?url=https%3A%2F%2F3737590677-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FDDUNvH2sIWXShQPw1sNJ%252Fuploads%252FHTrC5AUWG5GKKEPjkDaZ%252Fimage.png%3Falt%3Dmedia%26token%3D6fe8490c-e9a3-4085-a508-3aeccc7771aa&width=768&dpr=1&quality=100&sign=46522847&sv=2" alt="Кастомная генерация - Пейзаж 3">
+        </div>
+        <div class="gen-img-wrapper">
+          <img src="https://necovanilla.gitbook.io/nekovanila-viki/~gitbook/image?url=https%3A%2F%2F3737590677-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FDDUNvH2sIWXShQPw1sNJ%252Fuploads%252F99mPgmAu7CJWOoRFzdRP%252Fimage.png%3Falt%3Dmedia%26token%3De7c7872e-e42d-44d1-8dd4-15c0a339726a&width=768&dpr=1&quality=100&sign=222be071&sv=2" alt="Кастомная генерация - Пейзаж 4">
+        </div>
+      </div>
+
+    </article></main>
+  </div>
+  <script src="wiki.js"></script>
+</body>
+</html>

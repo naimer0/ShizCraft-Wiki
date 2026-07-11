@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чат — ShizCraft Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo_vanilla.png">
+  <link rel="stylesheet" href="wiki.css">
+</head>
+<body class="wiki-body">
+  <button class="wiki-mobile-toggle" id="wiki-menu" type="button"><i class="fa-solid fa-bars"></i></button>
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar"></aside>
+    <main class="wiki-main"><article class="wiki-article">
+      <h1>Система чата и ЛС</h1>
+      <p class="wiki-lead">Описание каналов связи, личных сообщений, системы оффлайн-почты и других интерактивных возможностей общения на ShizCraft.</p>
+
+      <h2>Каналы общения и префиксы</h2>
+      <p>На сервере действует умная система разделения чата. Вы можете переключать каналы или направлять сообщения в конкретные группы с помощью специальных символов перед текстом:</p>
+
+      <div class="wiki-table-wrap"><table class="wiki-table">
+        <tr><th>Канал чата</th><th>Префикс</th><th>Зона видимости</th></tr>
+        <tr>
+          <td><strong>Локальный чат</strong></td>
+          <td>(без префикса)</td>
+          <td>Рядом с вами (радиус 100 блоков)</td>
+        </tr>
+        <tr>
+          <td><strong>Глобальный чат</strong></td>
+          <td><code>!</code> (восклицательный знак)</td>
+          <td>Весь сервер</td>
+        </tr>
+      </table></div>
+
+      <div class="wiki-callout info">
+        <strong>Управление глобальным чатом:</strong> Вы можете полностью отключить отображение сообщений из глобального канала командой <code>/gtoggle</code> (или <code>/globaltoggle</code>), чтобы сосредоточиться на локальной беседе.
+      </div>
+
+      <h2>Личные сообщения (ЛС)</h2>
+      <p>Для общения тет-а-тет с конкретным игроком используйте команду:</p>
+      <p><code>/pm &lt;ник_игрока&gt; &lt;сообщение&gt;</code> (или алиасы: <code>/msg</code>, <code>/tell</code>, <code>/m</code>, <code>/w</code>)</p>
+      <p>Формат личных сообщений оформлен в красивом лавандовом стиле, а участники переписки получают звуковое уведомление.</p>
+
+      <h3>Черный список (Игнорирование)</h3>
+      <p>Если вы не хотите получать сообщения от конкретного игрока, вы можете внести его в свой черный список:</p>
+      <ul>
+        <li><code>/ignore add &lt;ник&gt;</code> — Начать игнорирование игрока.</li>
+        <li><code>/ignore remove &lt;ник&gt;</code> — Разрешить игроку снова писать вам в ЛС.</li>
+      </ul>
+      <p>При попытке написать вам игнорируемый игрок получит уведомление: <code>«Игрок добавил вас в черный список.»</code>.</p>
+
+      <h2>Оффлайн-сообщения (Почта)</h2>
+      <p>Если вы хотите отправить сообщение игроку, который сейчас не в сети, просто напишите ему в ЛС (<code>/pm &lt;ник&gt; &lt;сообщение&gt;</code>). Сервер сохранит это сообщение и доставит игроку, когда тот зайдет на сервер.</p>
+      
+      <h3>Как получить оффлайн-сообщения?</h3>
+      <p>При входе на сервер вас уведомят, а прочитать сообщения вы можете по команде <code>/offlinemessage</code>.</p>
+
+
+
+
+    </article></main>
+  </div>
+  <script src="wiki.js"></script>
+</body>
+</html>
