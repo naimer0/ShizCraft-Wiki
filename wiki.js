@@ -261,6 +261,22 @@
 
   function boot() {
     const sidebar = document.querySelector('.wiki-sidebar');
+
+    // 1. Inject mobile header bar dynamically
+    let mobileHeader = document.querySelector('.wiki-mobile-header');
+    if (!mobileHeader) {
+      mobileHeader = document.createElement('div');
+      mobileHeader.className = 'wiki-mobile-header';
+      mobileHeader.innerHTML = `
+        <button class="wiki-mobile-toggle" type="button" aria-label="Меню"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="wiki-brand-mobile">
+          <img src="assets/logo_vanilla.png" alt="ShizCraft">
+          <strong>ShizCraft Wiki</strong>
+        </a>
+      `;
+      document.body.insertBefore(mobileHeader, document.body.firstChild);
+    }
+
     if (sidebar && !sidebar.dataset.ready) {
       sidebar.innerHTML = nav;
       sidebar.dataset.ready = '1';
@@ -275,12 +291,34 @@
           });
         });
       }
+    }
 
-      // Attach mobile toggle menu
-      const toggle = document.getElementById('wiki-menu');
-      if (toggle) {
-        toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+    // 2. Set up overlay toggling for mobile sidebar
+    function toggleSidebar() {
+      const sb = document.querySelector('.wiki-sidebar');
+      if (sb) {
+        const isOpen = sb.classList.toggle('open');
+        let overlay = document.querySelector('.wiki-overlay');
+        if (isOpen) {
+          if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'wiki-overlay';
+            document.body.appendChild(overlay);
+            overlay.addEventListener('click', () => {
+              sb.classList.remove('open');
+              overlay.remove();
+            });
+          }
+        } else {
+          if (overlay) overlay.remove();
+        }
       }
+    }
+
+    // Attach click handler to mobile header toggle
+    const mobileToggle = mobileHeader.querySelector('.wiki-mobile-toggle');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', toggleSidebar);
     }
 
     // Init current page styles and pagers
@@ -305,9 +343,11 @@
       if (page) {
         e.preventDefault();
         
-        // Hide mobile sidebar if open
+        // Hide mobile sidebar and overlay if open
         const sidebar = document.querySelector('.wiki-sidebar');
         if (sidebar) sidebar.classList.remove('open');
+        const overlay = document.querySelector('.wiki-overlay');
+        if (overlay) overlay.remove();
         
         loadPage(href);
       }
