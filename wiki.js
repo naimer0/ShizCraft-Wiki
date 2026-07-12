@@ -12,6 +12,7 @@
     { file: 'reports.html', title: 'Репорты', group: 'features' },
     { file: 'playtime.html', title: 'Онлайн', group: 'features' },
     { file: 'features.html', title: 'Уникальные функции', group: 'features' },
+    { file: 'crafts.html', title: 'Кастомные крафты', group: 'features' },
     { file: 'generation.html', title: 'Кастомная генерация', group: 'features' },
     { file: 'donate.html', title: 'Донат и подписка', group: 'features' }
   ];
@@ -42,6 +43,7 @@
         <a href="reports.html"><i class="fa-solid fa-flag"></i> Репорты</a>
         <a href="playtime.html"><i class="fa-solid fa-clock"></i> Онлайн</a>
         <a href="features.html"><i class="fa-solid fa-star"></i> Уникальные функции</a>
+        <a href="crafts.html"><i class="fa-solid fa-screwdriver-wrench"></i> Кастомные крафты</a>
         <a href="generation.html"><i class="fa-solid fa-mountain-sun"></i> Кастомная генерация</a>
         <a href="donate.html"><i class="fa-solid fa-gem"></i> Донат и подписка</a>
       </div>

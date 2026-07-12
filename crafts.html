@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кастомные крафты — ShizCraft Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo_vanilla.png">
+  <link rel="stylesheet" href="wiki.css">
+  <style>
+    .recipe-card {
+      background: var(--w-panel);
+      border: 1px solid var(--w-line);
+      border-radius: 6px;
+      padding: 24px;
+      margin-bottom: 24px;
+      transition: transform var(--transition-speed) var(--ease),
+                  border-color var(--transition-speed) ease,
+                  box-shadow var(--transition-speed) var(--ease);
+    }
+    .recipe-card:hover {
+      border-color: rgba(139, 116, 255, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(139, 116, 255, 0.05);
+    }
+    .recipe-card h2 {
+      margin-top: 0 !important;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .recipe-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+      align-items: center;
+      margin-top: 15px;
+    }
+    @media (max-width: 768px) {
+      .recipe-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .recipe-info ul {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+    .recipe-info p {
+      color: #b0b0b0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .recipe-img-wrap {
+      background: #181818;
+      border: 1px solid var(--w-line);
+      border-radius: 6px;
+      padding: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+    .recipe-img-wrap img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge.custom {
+      background: rgba(139, 116, 255, 0.15);
+      color: #a998ff;
+      border: 1px solid rgba(139, 116, 255, 0.25);
+    }
+    .badge.vanilla {
+      background: rgba(84, 160, 255, 0.15);
+      color: #54a0ff;
+      border: 1px solid rgba(84, 160, 255, 0.25);
+    }
+  </style>
+</head>
+<body class="wiki-body">
+  <button class="wiki-mobile-toggle" id="wiki-menu" type="button" aria-label="Меню"><i class="fa-solid fa-bars"></i></button>
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar"></aside>
+    <main class="wiki-main"><article class="wiki-article">
+      <div class="wiki-breadcrumb">
+        <a href="index.html">Вики</a>
+        <span>/</span>
+        <span>Особенности</span>
+        <span>/</span>
+        <span>Кастомные крафты</span>
+      </div>
+
+      <h1>Кастомные крафты</h1>
+      <p class="wiki-lead">Список всех уникальных рецептов крафтов, доступных игрокам на сервере ShizCraft.</p>
+
+      <!-- 1. МАСКА -->
+      <div class="recipe-card" id="craft-mask">
+        <h2>
+          <span class="badge custom">Предмет</span> 
+          Маска
+        </h2>
+        <div class="recipe-grid">
+          <div class="recipe-info">
+            <p>Специальный головной убор, который позволяет скрыть личность персонажа во время проведения секретных операций или защиты своей территории.</p>
+            <ul>
+              <li><strong>Скрытие никнейма:</strong> Полностью скрывает ваш никнейм в чате, локальном общении, а также в системных сообщениях о смерти или убийстве (будет писаться <i>Неизвестный</i>).</li>
+              <li><strong>Защита от осмотра:</strong> Другие игроки не смогут осмотреть ваш инвентарь или профиль при клике ПКМ.</li>
+              <li><strong>Время действия:</strong> Маска активна в течение <strong>10 минут</strong> нахождения на голове, после чего приходит в негодность и ломается.</li>
+            </ul>
+          </div>
+          <div class="recipe-img-wrap">
+            <img src="assets/recipe_mask.png" alt="Рецепт крафта Маски">
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. ДЫМОВАЯ ШАШКА -->
+      <div class="recipe-card" id="craft-smoke-grenade">
+        <h2>
+          <span class="badge custom">Предмет</span> 
+          Дымовая шашка
+        </h2>
+        <div class="recipe-grid">
+          <div class="recipe-info">
+            <p>Тактическое средство для создания визуальных помех, отступления или дезориентации соперника.</p>
+            <ul>
+              <li><strong>ЛКМ (Дальний бросок):</strong> Бросает дымовую шашку вперед.</li>
+              <li><strong>ПКМ (Под себя):</strong> Мгновенно активирует шашку прямо под ногами игрока.</li>
+              <li><strong>Эффект дымовой завесы:</strong> Создает гигантское облако густых частиц дыма, которое держится <strong>30 секунд</strong>.</li>
+              <li><strong>Эффекты на противников:</strong> Ослепляет и замедляет всех игроков в радиусе 6 блоков (на бросившего игрока эффекты не действуют).</li>
+            </ul>
+          </div>
+          <div class="recipe-img-wrap">
+            <img src="assets/recipe_smoke_grenade.png" alt="Рецепт крафта Дымовой шашки">
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ПЕРЦОВЫЙ БАЛЛОНЧИК -->
+      <div class="recipe-card" id="craft-pepper-spray">
+        <h2>
+          <span class="badge custom">Предмет</span> 
+          Перцовый баллончик
+        </h2>
+        <div class="recipe-grid">
+          <div class="recipe-info">
+            <p>Надежное средство самообороны ближнего боя для временной нейтрализации агрессоров.</p>
+            <ul>
+              <li><strong>ПКМ (Активация):</strong> Распыляет едкий газ перед собой в радиусе 3.5 блоков.</li>
+              <li><strong>Стан:</strong> Все цели перед вами полностью лишаются возможности двигаться.</li>
+              <li><strong>Дезориентация:</strong> Противники временно ослепляют и слабеют, что лишает их возможности дать сдачи.</li>
+              <li><strong>Запас прочности:</strong> Баллончик рассчитан на <strong>5 использований</strong>, после чего ломается.</li>
+            </ul>
+          </div>
+          <div class="recipe-img-wrap">
+            <img src="assets/recipe_pepper_spray.png" alt="Рецепт крафта Перцового баллончика">
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. КУБ ОТЛАДКИ -->
+      <div class="recipe-card" id="craft-debug-stick">
+        <h2>
+          <span class="badge custom">Предмет</span> 
+          Куб отладки
+        </h2>
+        <div class="recipe-grid">
+          <div class="recipe-info">
+            <p>Строительный инструмент, воссоздающий возможности оригинальной палочки отладки Minecraft для детальной настройки блоков.</p>
+            <ul>
+              <li><strong>Разблокировка сотами:</strong> Чтобы начать редактирование блока, сначала кликните по нему <strong>пчелиными сотами</strong> (ПКМ).</li>
+              <li><strong>ЛКМ (Выбор свойства):</strong> Переключает доступные параметры блока (направление, оси, открытость, полублок и др.).</li>
+              <li><strong>ПКМ (Изменение значения):</strong> Меняет выбранный параметр блока на следующий.</li>
+            </ul>
+            <div class="wiki-callout danger" style="margin-top: 15px; margin-bottom: 0;">
+              Доступно только с подпиской <strong>Ultimate</strong>.
+            </div>
+          </div>
+          <div class="recipe-img-wrap">
+            <img src="assets/recipe_debug_stick.png" alt="Рецепт крафта Куба отладки">
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. НЕВИДИМЫЙ СВЕТ -->
+      <div class="recipe-card" id="craft-invisible-light">
+        <h2>
+          <span class="badge vanilla">Альтернатива</span> 
+          Невидимый свет
+        </h2>
+        <div class="recipe-grid">
+          <div class="recipe-info">
+            <p>Декоративный источник освещения, позволяющий подсвечивать постройки без загромождения пространства факелами или лампами.</p>
+            <ul>
+              <li><strong>Создание:</strong> Рецепт выкладывается строго по вертикали по центру верстака (Факел -> Стекло -> Медный слиток). При крафте получается 15 блоков света.</li>
+              <li><strong>Регулировка яркости:</strong> Зажмите клавишу <strong>Shift</strong> и прокручивайте <strong>колесико мыши</strong>, удерживая блок в руке, чтобы изменить уровень излучаемого света (от 0 до 15).</li>
+            </ul>
+          </div>
+          <div class="recipe-img-wrap">
+            <img src="assets/recipe_invisible_light.png" alt="Рецепт крафта Невидимого света">
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. ЧЕРНЫЙ КРАСИТЕЛЬ -->
+      <div class="recipe-card" id="craft-black-dye">
+        <h2>
+          <span class="badge vanilla">Альтернатива</span> 
+          Черный краситель
+        </h2>
+        <div class="recipe-grid">
+          <div class="recipe-info">
+            <p>Удобный способ получения черного красителя без необходимости поиска чернильных мешков спрутов.</p>
+            <ul>
+              <li><strong>Рецепт:</strong> Поместите <strong>1 единицу обычного или древесного угля</strong> в любое место сетки крафта в инвентаре или верстаке.</li>
+              <li><strong>Результат:</strong> Вы мгновенно получите 1 единицу черного красителя.</li>
+            </ul>
+          </div>
+          <div class="recipe-img-wrap">
+            <img src="assets/recipe_black_dye.png" alt="Рецепт крафта Черного красителя">
+          </div>
+        </div>
+      </div>
+
+    </article></main>
+  </div>
+  <script src="wiki.js"></script>
+</body>
+</html>
