@@ -9,6 +9,7 @@
     { file: 'trusted.html', title: 'Доверенный', group: 'features' },
     { file: 'profile.html', title: 'Профиль', group: 'features' },
     { file: 'bank.html', title: 'Банк', group: 'features' },
+    { file: 'guard.html', title: 'Гвардия', group: 'features' },
     { file: 'reports.html', title: 'Репорты', group: 'features' },
     { file: 'playtime.html', title: 'Онлайн', group: 'features' },
     { file: 'features.html', title: 'Уникальные функции', group: 'features' },
@@ -40,6 +41,7 @@
         <a href="trusted.html"><i class="fa-solid fa-shield-halved"></i> Доверенный</a>
         <a href="profile.html"><i class="fa-solid fa-user"></i> Профиль</a>
         <a href="bank.html"><i class="fa-solid fa-building-columns"></i> Банк</a>
+        <a href="guard.html"><i class="fa-solid fa-user-shield"></i> Гвардия</a>
         <a href="reports.html"><i class="fa-solid fa-flag"></i> Репорты</a>
         <a href="playtime.html"><i class="fa-solid fa-clock"></i> Онлайн</a>
         <a href="features.html"><i class="fa-solid fa-star"></i> Уникальные функции</a>
