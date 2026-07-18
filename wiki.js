@@ -16,6 +16,7 @@
     { file: 'crafts.html', title: 'Кастомные крафты', group: 'features' },
     { file: 'generation.html', title: 'Кастомная генерация', group: 'features' },
     { file: 'donate.html', title: 'Донат и подписка', group: 'features' },
+    { file: 'folia.html', title: 'Ядро Folia', group: 'info' },
     { file: 'plugins.html', title: 'Сводная таблица систем', group: 'info' }
   ];
 
@@ -53,6 +54,7 @@
       </div>
       <div class="wiki-nav-group">
         <div class="wiki-nav-title">Справка</div>
+        <a href="folia.html"><i class="fa-solid fa-microchip"></i> Ядро Folia</a>
         <a href="plugins.html"><i class="fa-solid fa-list-check"></i> Все системы</a>
       </div>
     </nav>`;
