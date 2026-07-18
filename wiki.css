@@ -24,8 +24,38 @@ body.wiki-body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
+body.menu-open { overflow: hidden; }
 a { color: var(--w-accent); text-decoration: none; }
 a:hover { color: #a998ff; }
+:where(a, button, input):focus-visible {
+  outline: 2px solid #b9acff;
+  outline-offset: 3px;
+}
+.wiki-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.wiki-skip-link {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 100;
+  padding: 10px 14px;
+  border-radius: 4px;
+  background: #fff;
+  color: #111;
+  font-weight: 800;
+  transform: translate(-50%, -160%);
+  transition: transform .2s ease;
+}
+.wiki-skip-link:focus { color: #111; transform: translate(-50%, 0); }
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   background: rgba(139,116,255,.12);
@@ -154,10 +184,6 @@ code {
   background:
     radial-gradient(700px 360px at 50% 0%, rgba(139,116,255,.06), transparent 55%),
     #111;
-  transition: opacity var(--transition-speed) var(--ease);
-}
-.wiki-main.fade-out {
-  opacity: 0;
 }
 .wiki-top {
   width: 100%;
@@ -423,7 +449,8 @@ table.wiki-table {
   padding-top: 20px;
   border-top: 1px solid var(--w-line);
 }
-.wiki-pager a {
+.wiki-pager > a,
+.wiki-pager > span {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -457,8 +484,8 @@ table.wiki-table {
   color: #fff;
 }
 .wiki-pager a:hover .title { color: var(--w-accent); }
-.wiki-pager a.next { text-align: right; align-items: flex-end; }
-.wiki-pager a.disabled {
+.wiki-pager .next { text-align: right; align-items: flex-end; }
+.wiki-pager .disabled {
   opacity: .35;
   pointer-events: none;
 }
@@ -491,7 +518,7 @@ table.wiki-table {
   .wiki-main { padding: 56px 16px 48px; }
   .wiki-grid { grid-template-columns: 1fr; }
   .wiki-pager { grid-template-columns: 1fr; }
-  .wiki-pager a.next { text-align: left; align-items: flex-start; }
+  .wiki-pager .next { text-align: left; align-items: flex-start; }
 }
 
 @keyframes fadeUp {
@@ -500,16 +527,7 @@ table.wiki-table {
 }
 
 
-/* Scroll Reveal & Canvas Particles */
-#wiki-particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
+/* Scroll reveal */
 .reveal-item {
   opacity: 0;
   transform: translateY(16px);
@@ -605,4 +623,15 @@ table.wiki-table {
     padding: 8px 10px;
     font-size: 0.8rem;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+  .reveal-item { opacity: 1; transform: none; }
 }

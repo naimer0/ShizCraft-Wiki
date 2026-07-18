@@ -15,17 +15,19 @@
     { file: 'features.html', title: 'Уникальные функции', group: 'features' },
     { file: 'crafts.html', title: 'Кастомные крафты', group: 'features' },
     { file: 'generation.html', title: 'Кастомная генерация', group: 'features' },
-    { file: 'donate.html', title: 'Донат и подписка', group: 'features' }
+    { file: 'donate.html', title: 'Донат и подписка', group: 'features' },
+    { file: 'plugins.html', title: 'Сводная таблица систем', group: 'info' }
   ];
 
   const nav = `
     <a href="index.html" class="wiki-brand">
-      <img src="assets/logo_vanilla.png" alt="ShizCraft">
+      <img src="assets/logo_vanilla.png" alt="ShizCraft" width="34" height="34" decoding="async">
       <div><strong>ShizCraft</strong><span>Wiki</span></div>
     </a>
     <div class="wiki-search">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="search" id="wiki-search" placeholder="Поиск...">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <label class="wiki-sr-only" for="wiki-search">Поиск по разделам</label>
+      <input type="search" id="wiki-search" placeholder="Поиск..." autocomplete="off">
     </div>
     <nav class="wiki-nav">
       <div class="wiki-nav-group">
@@ -49,81 +51,19 @@
         <a href="generation.html"><i class="fa-solid fa-mountain-sun"></i> Кастомная генерация</a>
         <a href="donate.html"><i class="fa-solid fa-gem"></i> Донат и подписка</a>
       </div>
+      <div class="wiki-nav-group">
+        <div class="wiki-nav-title">Справка</div>
+        <a href="plugins.html"><i class="fa-solid fa-list-check"></i> Все системы</a>
+      </div>
     </nav>`;
 
-  // --- HUB-INSPIRED ANIMATIONS SYSTEM ---
-  let particlesArray = [];
-  let animationFrameId;
-  let canvas, ctx;
-
-  function initParticles() {
-    canvas = document.getElementById('wiki-particles');
-    if (!canvas) {
-      canvas = document.createElement('canvas');
-      canvas.id = 'wiki-particles';
-      document.body.appendChild(canvas);
-    }
-    ctx = canvas.getContext('2d');
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    class Particle {
-      constructor() {
-        this.reset();
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-      }
-      reset() {
-        this.size = Math.random() * 2 + 1;
-        this.speedX = Math.random() * 0.3 - 0.15;
-        this.speedY = Math.random() * -0.4 - 0.15; // Float upwards gently
-        this.opacity = Math.random() * 0.4 + 0.15;
-        this.color = `rgba(139, 116, 255, ${this.opacity})`; // Soft magic purple glow
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.y < 0 || this.x < 0 || this.x > canvas.width) {
-          this.y = canvas.height;
-          this.x = Math.random() * canvas.width;
-          this.reset();
-        }
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      }
-    }
-
-    particlesArray = [];
-    const numParticles = Math.min(60, Math.floor((window.innerWidth * window.innerHeight) / 25000));
-    for (let i = 0; i < numParticles; i++) {
-      particlesArray.push(new Particle());
-    }
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-        particlesArray[i].draw();
-      }
-      animationFrameId = requestAnimationFrame(animateParticles);
-    }
-    if (animationFrameId) cancelAnimationFrame(animationFrameId);
-    animateParticles();
-  }
-
   function initPageAnimations() {
-    // 1. 3D Tilt Effect on cards and pagers
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Keep the pointer tilt for desktop mice only.
     const tiltTargets = document.querySelectorAll('.wiki-card, .wiki-ref, .wiki-pager a:not(.disabled)');
-    tiltTargets.forEach(card => {
+    if (supportsHover && !reduceMotion) tiltTargets.forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -143,8 +83,11 @@
       });
     });
 
-    // 2. Scroll Reveal observer
     const revealTargets = document.querySelectorAll('.wiki-card, .wiki-ref, .wiki-callout, .wiki-article h2, .wiki-article h3, .wiki-table-wrap');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealTargets.forEach((target) => target.classList.add('reveal-active'));
+      return;
+    }
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -171,8 +114,10 @@
       const href = (a.getAttribute('href') || '').split('/').pop();
       if (href === file) {
         a.classList.add('active');
+        a.setAttribute('aria-current', 'page');
       } else {
         a.classList.remove('active');
+        a.removeAttribute('aria-current');
       }
     });
 
@@ -188,9 +133,10 @@
     // 2. Add Breadcrumb
     if (article && page) {
       const groupName = page.group === 'start' ? 'Начало' : page.group === 'features' ? 'Особенности' : 'Информация';
-      const bc = document.createElement('div');
+      const bc = document.createElement('nav');
       bc.className = 'wiki-breadcrumb';
-      bc.innerHTML = `<a href="index.html">Wiki</a><span>/</span><span>${groupName}</span><span>/</span><span>${page.title}</span>`;
+      bc.setAttribute('aria-label', 'Хлебные крошки');
+      bc.innerHTML = `<a href="index.html">Wiki</a><span aria-hidden="true">/</span><span>${groupName}</span><span aria-hidden="true">/</span><span aria-current="page">${page.title}</span>`;
       article.insertBefore(bc, article.firstChild);
     }
 
@@ -199,11 +145,12 @@
     if (idx >= 0 && article) {
       const prev = pages[idx - 1];
       const next = pages[idx + 1];
-      const pager = document.createElement('div');
+      const pager = document.createElement('nav');
       pager.className = 'wiki-pager';
+      pager.setAttribute('aria-label', 'Навигация по страницам');
       pager.innerHTML = `
-        ${prev ? `<a href="${prev.file}"><span class="label">← Назад</span><span class="title">${prev.title}</span></a>` : `<a class="disabled"><span class="label">← Назад</span><span class="title">—</span></a>`}
-        ${next ? `<a class="next" href="${next.file}"><span class="label">Далее →</span><span class="title">${next.title}</span></a>` : `<a class="next disabled"><span class="label">Далее →</span><span class="title">—</span></a>`}
+        ${prev ? `<a href="${prev.file}"><span class="label">← Назад</span><span class="title">${prev.title}</span></a>` : `<span class="disabled" aria-hidden="true"><span class="label">← Назад</span><span class="title">—</span></span>`}
+        ${next ? `<a class="next" href="${next.file}"><span class="label">Далее →</span><span class="title">${next.title}</span></a>` : `<span class="next disabled" aria-hidden="true"><span class="label">Далее →</span><span class="title">—</span></span>`}
       `;
       const main = document.querySelector('.wiki-main');
       if (main) main.appendChild(pager);
@@ -215,68 +162,33 @@
     }
   }
 
-  function loadPage(href, pushState = true) {
-    const file = href.split('/').pop() || 'index.html';
-    const main = document.querySelector('.wiki-main');
-    const article = document.querySelector('.wiki-article');
-
-    if (!main || !article) {
-      if (pushState) location.href = href;
-      return;
-    }
-
-    // Add fade-out class
-    main.classList.add('fade-out');
-
-    setTimeout(() => {
-      fetch(href)
-        .then((res) => {
-          if (!res.ok) throw new Error('Network error');
-          return res.text();
-        })
-        .then((html) => {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-          const newArticle = doc.querySelector('.wiki-article');
-
-          if (newArticle) {
-            article.innerHTML = newArticle.innerHTML;
-            document.title = doc.title;
-
-            if (pushState) {
-              history.pushState({ href }, '', href);
-            }
-
-            renderPageElements(file);
-
-            // Scroll content area back to top
-            window.scrollTo({ top: 0, behavior: 'instant' });
-          } else {
-            location.href = href;
-          }
-        })
-        .catch(() => {
-          location.href = href;
-        })
-        .finally(() => {
-          // Remove fade-out class to let content fade/slide back in
-          main.classList.remove('fade-out');
-        });
-    }, 200); // 200ms duration aligns with transition speed variables
-  }
-
   function boot() {
     const sidebar = document.querySelector('.wiki-sidebar');
+    const main = document.querySelector('.wiki-main');
+    if (sidebar) {
+      sidebar.id = 'wiki-sidebar';
+      sidebar.setAttribute('aria-label', 'Навигация по вики');
+    }
+    if (main) {
+      main.id = 'wiki-content';
+      main.setAttribute('tabindex', '-1');
+    }
+
+    const skipLink = document.createElement('a');
+    skipLink.className = 'wiki-skip-link';
+    skipLink.href = '#wiki-content';
+    skipLink.textContent = 'Перейти к содержанию';
+    document.body.insertBefore(skipLink, document.body.firstChild);
 
     // 1. Inject mobile header bar dynamically
     let mobileHeader = document.querySelector('.wiki-mobile-header');
     if (!mobileHeader) {
-      mobileHeader = document.createElement('div');
+      mobileHeader = document.createElement('header');
       mobileHeader.className = 'wiki-mobile-header';
       mobileHeader.innerHTML = `
-        <button class="wiki-mobile-toggle" type="button" aria-label="Меню"><i class="fa-solid fa-bars"></i></button>
+        <button class="wiki-mobile-toggle" type="button" aria-label="Открыть меню" aria-controls="wiki-sidebar" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
         <a href="index.html" class="wiki-brand-mobile">
-          <img src="assets/logo_vanilla.png" alt="ShizCraft">
+          <img src="assets/logo_vanilla.png" alt="ShizCraft" width="24" height="24" decoding="async">
           <strong>ShizCraft Wiki</strong>
         </a>
       `;
@@ -295,6 +207,10 @@
           sidebar.querySelectorAll('.wiki-nav a').forEach((a) => {
             a.style.display = !q || a.textContent.toLowerCase().includes(q) ? '' : 'none';
           });
+          sidebar.querySelectorAll('.wiki-nav-group').forEach((group) => {
+            const hasVisibleLink = [...group.querySelectorAll('a')].some((a) => a.style.display !== 'none');
+            group.hidden = !hasVisibleLink;
+          });
         });
       }
     }
@@ -307,6 +223,8 @@
       if (sb) sb.classList.remove('open');
       if (mh) mh.classList.remove('hidden');
       if (ov) ov.remove();
+      document.body.classList.remove('menu-open');
+      mobileHeader.querySelector('.wiki-mobile-toggle')?.setAttribute('aria-expanded', 'false');
     }
 
     function toggleSidebar() {
@@ -317,6 +235,8 @@
         if (isOpen) {
           // Hide mobile header
           if (mh) mh.classList.add('hidden');
+          document.body.classList.add('menu-open');
+          mobileHeader.querySelector('.wiki-mobile-toggle')?.setAttribute('aria-expanded', 'true');
           // Create overlay
           let overlay = document.querySelector('.wiki-overlay');
           if (!overlay) {
@@ -337,38 +257,25 @@
       mobileToggle.addEventListener('click', toggleSidebar);
     }
 
-    // Init current page styles and pagers
-    renderPageElements(currentFile());
-    
-    // Init magical particles background
-    if (typeof initParticles === 'function') {
-      initParticles();
-    }
-
-    // Intercept click events on local links
-    document.addEventListener('click', (e) => {
-      const anchor = e.target.closest('a');
-      if (!anchor) return;
-      
-      const href = anchor.getAttribute('href');
-      if (!href) return;
-
-      const file = href.split('/').pop();
-      const page = pages.find((p) => p.file === file);
-      
-      if (page) {
-        e.preventDefault();
-        
-        // Hide mobile sidebar and overlay if open
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && document.querySelector('.wiki-sidebar.open')) {
         closeSidebar();
-        
-        loadPage(href);
+        mobileToggle?.focus();
       }
     });
 
-    // Handle browser back/forward buttons
-    window.addEventListener('popstate', () => {
-      loadPage(location.pathname, false);
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeSidebar();
+    });
+
+    // Init current page styles and pagers
+    renderPageElements(currentFile());
+
+    document.querySelectorAll('.fa-solid').forEach((icon) => {
+      icon.setAttribute('aria-hidden', 'true');
+    });
+    document.querySelectorAll('.wiki-table th').forEach((header) => {
+      if (!header.hasAttribute('scope')) header.setAttribute('scope', 'col');
     });
   }
 
