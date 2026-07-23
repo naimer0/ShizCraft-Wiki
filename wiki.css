@@ -1,4 +1,4 @@
-/* ShizCraft Wiki — centralized GitBook / NecoVanilla layout + hub style */
+/* ShizCraft Wiki - centralized GitBook / NecoVanilla layout + hub style */
 :root {
   --w-accent: #8b74ff;
   --w-accent-2: #6f54ff;
@@ -174,7 +174,7 @@ code {
 }
 .wiki-nav a i { width: 15px; text-align: center; font-size: .8rem; opacity: .85; }
 
-/* MAIN — centered content like GitBook */
+/* MAIN - centered content like GitBook */
 .wiki-main {
   min-width: 0;
   display: flex;

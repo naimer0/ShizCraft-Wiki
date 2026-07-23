@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Порядочность - ShizCraft Wiki</title>
+  <meta name="description" content="Порядочность ShizCraft: как меняются баллы и какие действия зависят от уровня.">
+  <meta name="theme-color" content="#111111"><meta name="color-scheme" content="dark">
+  <meta property="og:site_name" content="ShizCraft Wiki"><meta property="og:title" content="Порядочность - ShizCraft Wiki">
+  <meta property="og:description" content="Баллы порядочности, условия изменения и игровые ограничения."><meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo_vanilla.png">
+  <link rel="stylesheet" href="wiki.css">
+</head>
+<body class="wiki-body">
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar"></aside>
+    <main class="wiki-main"><article class="wiki-article">
+      <div class="wiki-breadcrumb">
+        <a href="index.html">Вики</a><span>/</span><span>Особенности</span><span>/</span><span>Порядочность</span>
+      </div>
+
+      <h1>Система порядочности</h1>
+      <p class="wiki-lead">Порядочность - личный показатель от <strong>0 до 10</strong>. Он влияет на доступные действия на сервере. Начальное значение - <strong>8/10</strong>.</p>
+
+      <h2>Как посмотреть свой уровень</h2>
+      <p>Введите <code>/profile</code>. Там показаны баллы, статус и действующие ограничения. Лайки и дизлайки в карточке игрока - это оценки профиля; они идут в прогресс порядочности.</p>
+
+      <div class="wiki-table-wrap"><table class="wiki-table">
+        <tr><th>Баллы</th><th>Статус</th></tr>
+        <tr><td><strong>8–10/10</strong></td><td>🟢 Высокая порядочность</td></tr>
+        <tr><td><strong>5–7/10</strong></td><td>🟡 Средняя порядочность</td></tr>
+        <tr><td><strong>0–4/10</strong></td><td>🔴 Низкая порядочность</td></tr>
+      </table></div>
+
+      <h2>Как повысить порядочность</h2>
+      <div class="wiki-table-wrap"><table class="wiki-table">
+        <tr><th>Действие</th><th>Награда</th></tr>
+        <tr><td>Получить 10 новых лайков</td><td><strong>+1</strong></td></tr>
+        <tr><td>Наиграть 8 часов на сервере</td><td><strong>+1</strong></td></tr>
+        <tr><td>Наиграть 8 часов на должности гвардейца или банкира</td><td><strong>+1</strong></td></tr>
+        <tr><td>Купить подписку Ultimate</td><td><strong>+2</strong>, один раз</td></tr>
+        <tr><td>Оплатить 10 штрафов общей суммой более 1024 АР</td><td><strong>+2</strong></td></tr>
+      </table></div>
+      <p>Время обычной игры и время на должности учитываются отдельно. Поэтому у гвардейца или банкира оба счётчика могут расти параллельно.</p>
+
+      <h2>За что снижается порядочность</h2>
+      <div class="wiki-table-wrap"><table class="wiki-table">
+        <tr><th>Событие</th><th>Изменение</th></tr>
+        <tr><td>Получить 10 новых дизлайков</td><td><strong>−1</strong></td></tr>
+        <tr><td>Просрочить первый период оплаты штрафа - до удвоения суммы</td><td><strong>−1</strong></td></tr>
+        <tr><td>Одновременно иметь более 4 неоплаченных штрафов</td><td><strong>−2</strong></td></tr>
+        <tr><td>Получить бан за неоплату штрафа</td><td><strong>−2</strong></td></tr>
+        <tr><td>Перманентная блокировка аккаунта</td><td><strong>−4</strong></td></tr>
+      </table></div>
+      <h2>Ограничения и награды</h2>
+      <div class="wiki-table-wrap"><table class="wiki-table">
+        <tr><th>Уровень</th><th>Эффект</th></tr>
+        <tr><td><strong>10/10</strong></td><td>Открывается доступ к кастомным крафтам ShizCrafts, отмеченным в вики как доступные при Ultimate.</td></tr>
+        <tr><td><strong>6/10 и ниже</strong></td><td>Нельзя передавать голос в голосовом чате. Это и есть запрет «голосовых сообщений».</td></tr>
+        <tr><td><strong>5/10 и ниже</strong></td><td>Нельзя вступать в государственные структуры; текущие роли гвардейца и банкира снимаются.</td></tr>
+        <tr><td><strong>4/10 и ниже</strong></td><td>Голосовой чат полностью недоступен: нельзя ни говорить, ни слышать других игроков.</td></tr>
+        <tr><td><strong>2/10 и ниже</strong></td><td>Недоступен банк.</td></tr>
+      </table></div>
+      <p>На уровне 10/10 открываются только отмеченные крафты, а не все функции подписки Ultimate.</p>
+
+    </article></main>
+  </div>
+  <script src="wiki.js"></script>
+</body>
+</html>
