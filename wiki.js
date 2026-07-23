@@ -8,6 +8,8 @@
     { file: 'chat.html', title: 'Чат и ЛС', group: 'features' },
     { file: 'trusted.html', title: 'Доверенный', group: 'features' },
     { file: 'profile.html', title: 'Профиль', group: 'features' },
+    { file: 'integrity.html', title: 'Порядочность', group: 'features' },
+    { file: 'streaks.html', title: 'Серии и огоньки', group: 'features' },
     { file: 'bank.html', title: 'Банк', group: 'features' },
     { file: 'guard.html', title: 'Гвардия', group: 'features' },
     { file: 'reports.html', title: 'Репорты', group: 'features' },
@@ -43,6 +45,8 @@
         <a href="chat.html"><i class="fa-solid fa-comments"></i> Чат и ЛС</a>
         <a href="trusted.html"><i class="fa-solid fa-shield-halved"></i> Доверенный</a>
         <a href="profile.html"><i class="fa-solid fa-user"></i> Профиль</a>
+        <a href="integrity.html"><i class="fa-solid fa-scale-balanced"></i> Порядочность</a>
+        <a href="streaks.html"><i class="fa-solid fa-fire"></i> Серии и огоньки</a>
         <a href="bank.html"><i class="fa-solid fa-building-columns"></i> Банк</a>
         <a href="guard.html"><i class="fa-solid fa-user-shield"></i> Гвардия</a>
         <a href="reports.html"><i class="fa-solid fa-flag"></i> Репорты</a>
@@ -151,8 +155,8 @@
       pager.className = 'wiki-pager';
       pager.setAttribute('aria-label', 'Навигация по страницам');
       pager.innerHTML = `
-        ${prev ? `<a href="${prev.file}"><span class="label">← Назад</span><span class="title">${prev.title}</span></a>` : `<span class="disabled" aria-hidden="true"><span class="label">← Назад</span><span class="title">—</span></span>`}
-        ${next ? `<a class="next" href="${next.file}"><span class="label">Далее →</span><span class="title">${next.title}</span></a>` : `<span class="next disabled" aria-hidden="true"><span class="label">Далее →</span><span class="title">—</span></span>`}
+        ${prev ? `<a href="${prev.file}"><span class="label">← Назад</span><span class="title">${prev.title}</span></a>` : `<span class="disabled" aria-hidden="true"><span class="label">← Назад</span><span class="title">-</span></span>`}
+        ${next ? `<a class="next" href="${next.file}"><span class="label">Далее →</span><span class="title">${next.title}</span></a>` : `<span class="next disabled" aria-hidden="true"><span class="label">Далее →</span><span class="title">-</span></span>`}
       `;
       const main = document.querySelector('.wiki-main');
       if (main) main.appendChild(pager);

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Серии и огоньки - ShizCraft Wiki</title>
+  <meta name="description" content="Огонёк ShizCraft: как создать серию с игроком и выполнять ежедневные задания.">
+  <meta name="theme-color" content="#111111"><meta name="color-scheme" content="dark">
+  <meta property="og:site_name" content="ShizCraft Wiki"><meta property="og:title" content="Серии и огоньки - ShizCraft Wiki">
+  <meta property="og:description" content="Ежедневная серия с игроком: создание, задания и время обновления."><meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo_vanilla.png">
+  <link rel="stylesheet" href="wiki.css">
+</head>
+<body class="wiki-body">
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar"></aside>
+    <main class="wiki-main"><article class="wiki-article">
+      <div class="wiki-breadcrumb">
+        <a href="index.html">Вики</a><span>/</span><span>Особенности</span><span>/</span><span>Серии и огоньки</span>
+      </div>
+
+      <h1>Серийчик «Огонёк»</h1>
+      <p class="wiki-lead">Огонёк - ежедневная серия с другим игроком. Выполняйте задания друг с другом, чтобы счётчик дней рос.</p>
+
+      <h2>Как создать огонёк</h2>
+      <ol>
+        <li>Зажмите <code>Shift</code> и нажмите <strong>ПКМ</strong> пустой рукой по игроку, чтобы открыть его профиль.</li>
+        <li>Нажмите кнопку <strong>🔥</strong> между лайком и дизлайком - игроку уйдёт приглашение.</li>
+        <li>Получатель увидит уведомление. Чтобы принять приглашение, он должен открыть <strong>ваш</strong> профиль тем же способом и нажать кнопку <strong>🔥</strong>.</li>
+      </ol>
+      <p>Приглашение действует <strong>1 минуту</strong>. Таймер виден в меню. Когда он закончится, приглашение можно отправить снова.</p>
+
+      <div class="wiki-callout info">
+        С одним игроком можно создать несколько независимых огоньков - по одному с каждым партнёром. Прогресс и серия у каждой пары свои.
+      </div>
+
+      <h2>Что показывается в профиле</h2>
+      <p>Пока огонька нет, на кнопке лежит <strong>зажигалка</strong>. После подтверждения она меняется на <strong>огненную пыль</strong>. В описании - число дней и задания на сегодня:</p>
+      <ul>
+        <li><strong>✔</strong> - задание выполнено;</li>
+        <li><strong>✘</strong> - задание ещё не выполнено.</li>
+      </ul>
+
+      <h2>Ежедневные задания</h2>
+      <p>Оба партнёра должны выполнить все четыре действия друг с другом:</p>
+      <div class="wiki-table-wrap"><table class="wiki-table">
+        <tr><th>Задание</th><th>Как выполнить</th></tr>
+        <tr><td>Войти на сервер</td><td>Достаточно зайти на ShizCraft в течение дня.</td></tr>
+        <tr><td>Поцеловать партнёра 1 раз</td><td>Используйте <code>/kiss &lt;ник&gt;</code> рядом с партнёром, если у него включён приём поцелуев.</td></tr>
+        <tr><td>Пожать руку партнёру</td><td>Нажмите ПКМ пустой рукой по партнёру.</td></tr>
+        <tr><td>Написать партнёру в ЛС</td><td>Отправьте личное сообщение через систему ЛС сервера.</td></tr>
+      </table></div>
+      <p>Серия увеличится, только когда все задания выполнены у <strong>обоих</strong> игроков.</p>
+
+      <h2>Когда обновляется день</h2>
+      <p>Новый день для огонька начинается после <strong>00:01 по московскому времени (МСК)</strong>. Если к следующему дню хотя бы один из партнёров не выполнил все задания, огонёк тухнет - счётчик серии сбрасывается до 0.</p>
+
+      <div class="wiki-callout warning">
+        Обычное сообщение в локальный или глобальный чат не засчитывается. Для задания нужен именно личный диалог с партнёром.
+      </div>
+    </article></main>
+  </div>
+  <script src="wiki.js"></script>
+</body>
+</html>
